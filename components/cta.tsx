@@ -28,15 +28,31 @@ export default function Cta() {
 
   return (
     <section id="cta" className="px-4 py-16 md:py-24">
-      <div className="max-w-6xl mx-auto">
-        <div className="relative overflow-hidden rounded-3xl border border-border bg-card">
+      <div className="max-w-6xl mx-auto relative">
+        {/* outer glow, sits outside the card shadow */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -inset-4 rounded-[28px] bg-primary/30 blur-2xl opacity-60 dark:opacity-70"
+        />
+
+        <div className="relative overflow-hidden rounded-3xl border border-border bg-card z-[1]">
           <div className="absolute inset-0 bg-gradient-to-b from-background to-light/20 dark:from-card dark:to-light/10" />
 
           <div className="relative z-[1] flex flex-col items-center text-center px-6 md:px-16 py-16 md:py-24 gap-6">
-            <div className="w-12 h-12 rounded-2xl border border-border bg-background/70 dark:bg-card/70 shadow-sm flex items-center justify-center">
+            <div className="relative">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -inset-2 rounded-2xl bg-white/40 blur-lg dark:bg-white/30 z-0"
+              />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -inset-[1px] rounded-2xl ring-1 ring-white/80 opacity-80 z-0"
+              />
+              <div className="relative z-[1] w-12 h-12 rounded-2xl border border-border bg-background/70 dark:bg-card/70 shadow-sm flex items-center justify-center">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" className="text-foreground/70">
                 <path d="M9 3a1 1 0 112 0v6h6a1 1 0 110 2h-6v6a1 1 0 11-2 0v-6H3a1 1 0 110-2h6V3z" />
               </svg>
+              </div>
             </div>
 
             <h3 className="text-3xl md:text-5xl font-semibold tracking-tight bg-gradient-to-b from-foreground to-muted-foreground text-transparent bg-clip-text">

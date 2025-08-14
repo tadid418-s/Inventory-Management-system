@@ -16,7 +16,31 @@ export default function Hero() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   return (
     <div className="relative justify-center items-center">
-      <section id="product" className="max-w-screen-xl mx-auto px-4 py-0 md:py-0 gap-12 md:px-8 flex flex-col justify-center overflow-visible min-h-[calc(100dvh-64px)] mb-12 md:mb-20">
+      {/* Top Left Flare */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2, delay: 0.3, type: "spring", bounce: 0 }}
+        className="w-full h-full absolute -top-32 -left-32 flex justify-start items-start pointer-events-none z-0"
+      >
+        <div className="w-3/4 flex justify-start items-start">
+          <div className="w-12 h-[600px] bg-light blur-[70px] rounded-3xl max-sm:rotate-[-15deg] sm:rotate-[-35deg] [will-change:transform]"></div>
+        </div>
+      </motion.div>
+
+      {/* Top Right Flare - Moved behind dashboard */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2, delay: 0.5, type: "spring", bounce: 0 }}
+        className="w-full h-full absolute -top-32 flex justify-end items-center pointer-events-none z-0"
+      >
+        <div className="w-3/4 flex justify-center items-center">
+          <div className="w-12 h-[600px] bg-light blur-[70px] rounded-3xl max-sm:rotate-[15deg] sm:rotate-[35deg] [will-change:transform]"></div>
+        </div>
+      </motion.div>
+
+      <section id="product" className="relative max-w-screen-xl mx-auto px-4 py-0 md:py-0 gap-12 md:px-8 flex flex-col justify-center overflow-visible min-h-[calc(100dvh-64px)] mb-12 md:mb-20 z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
@@ -82,16 +106,6 @@ export default function Hero() {
           </motion.div>
         </div>
       </section>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 2, delay: 0.5, type: "spring", bounce: 0 }}
-        className="w-full h-full absolute -top-32 flex justify-end items-center pointer-events-none "
-      >
-        <div className="w-3/4 flex justify-center items-center">
-          <div className="w-12 h-[600px] bg-light blur-[70px] rounded-3xl max-sm:rotate-[15deg] sm:rotate-[35deg] [will-change:transform]"></div>
-        </div>
-      </motion.div>
     </div>
   );
 }

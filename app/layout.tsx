@@ -15,8 +15,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "SaaS Landing Template",
-  description: "Landing Page template.",
+  title: "InventoryOS — Smart Inventory Management",
+  description: "Smart inventory for modern teams.",
 };
 
 export default function RootLayout({

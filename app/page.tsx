@@ -6,6 +6,7 @@ import Testimonials from "@/components/testimonials";
 import Pricing from "@/components/pricing";
 import Faq from "@/components/faq";
 import Footer from "@/components/footer";
+import Cta from "@/components/cta";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Stats />
       <Pricing />
       <Faq />
+      <Cta />
       <Footer />
     </main>
   );

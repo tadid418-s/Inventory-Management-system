@@ -16,7 +16,7 @@ export default function Hero() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   return (
     <div className="relative justify-center items-center">
-      <section id="product" className="max-w-screen-xl mx-auto px-4 py-0 md:py-0 gap-12 md:px-8 flex flex-col justify-center overflow-visible min-h-[calc(100dvh-64px)]">
+      <section id="product" className="max-w-screen-xl mx-auto px-4 py-0 md:py-0 gap-12 md:px-8 flex flex-col justify-center overflow-visible min-h-[calc(100dvh-64px)] mb-12 md:mb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <motion.div
             initial={{ y: 20, opacity: 0 }}

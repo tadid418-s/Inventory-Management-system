@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 
 export default function Testimonials() {
   const testimonials = [
@@ -113,51 +114,18 @@ export default function Testimonials() {
           </p>
         </motion.div>
 
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.05,
-                ease: "easeOut",
-              }}
-              className="break-inside-avoid mb-8"
-            >
-              <div className="p-6 rounded-xl bg-card border border-border transition-colors duration-300">
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <StarIcon key={i} />
-                  ))}
-                </div>
-
-                <p className="text-muted-foreground mb-6 leading-relaxed text-sm">
-                  &ldquo;{testimonial.content}&rdquo;
-                </p>
-
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center text-sm font-medium border border-primary/20">
-                    {testimonial.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-sm">
-                      {testimonial.name}
-                    </h4>
-                    <p className="text-xs text-muted-foreground">
-                      {testimonial.role}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        <InfiniteMovingCards
+          className="mt-2"
+          items={testimonials.map((t) => ({
+            quote: t.content,
+            name: t.name,
+            title: t.role,
+            rating: t.rating,
+          }))}
+          direction="right"
+          speed="slow"
+          pauseOnHover
+        />
       </div>
     </section>
   );

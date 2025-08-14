@@ -28,8 +28,10 @@ import {
 
 export default function NavBar() {
   const menuItems = [
+    { name: "Product", href: "#product" },
     { name: "Pricing", href: "#pricing" },
     { name: "Testimonials", href: "#testimonials" },
+    { name: "FAQ", href: "#faq" },
   ];
 
   return (
@@ -43,7 +45,7 @@ export default function NavBar() {
             href="/"
             className="font-light tracking-tighter text-inherit text-lg"
           >
-            Acme
+            InventoryOS
           </a>
         </NavbarBrand>
       </NavbarContent>
@@ -53,9 +55,14 @@ export default function NavBar() {
             href="/"
             className="font-light tracking-tighter text-2xl flex gap-3 justify-center items-center"
           >
-            Acme
+            InventoryOS
           </a>
         </NavbarBrand>
+        <NavbarItem>
+          <Button as={Link} href="#product" variant="light" size="sm">
+            Product
+          </Button>
+        </NavbarItem>
         <NavbarItem>
           <Button as={Link} href="#pricing" variant="light" size="sm">
             Pricing
@@ -64,6 +71,11 @@ export default function NavBar() {
         <NavbarItem>
           <Button as={Link} href="#testimonials" variant="light" size="sm">
             Testimonials
+          </Button>
+        </NavbarItem>
+        <NavbarItem>
+          <Button as={Link} href="#faq" variant="light" size="sm">
+            FAQ
           </Button>
         </NavbarItem>
         <NavbarItem>
@@ -77,47 +89,47 @@ export default function NavBar() {
                 Dropdown
               </Button>
             </DropdownTrigger>
-            <DropdownMenu
-              aria-label="ACME features"
+               <DropdownMenu
+               aria-label="InventoryOS features"
               className="w-[340px]"
               itemClasses={{
                 base: "gap-4",
               }}
             >
               <DropdownItem
-                key="autoscaling"
-                description="ACME scales apps to meet user demand, automagically, based on load."
+                key="realtime_visibility"
+                description="Track stock levels across warehouses, stores, and channels in real time."
                 startContent={<OpenInNewWindowIcon />}
               >
-                Autoscaling
+                Real-time Visibility
               </DropdownItem>
               <DropdownItem
-                key="usage_metrics"
-                description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
+                key="ai_forecasting"
+                description="Predict demand with AI to optimize purchasing and reduce stockouts."
                 startContent={<PersonIcon />}
               >
-                Usage Metrics
+                AI Forecasting
               </DropdownItem>
               <DropdownItem
-                key="production_ready"
-                description="ACME runs on ACME, join us and others serving requests at web scale."
+                key="smart_reordering"
+                description="Automate purchase orders with supplier lead times and min/max thresholds."
                 startContent={<GlobeIcon />}
               >
-                Production Ready
+                Smart Reordering
               </DropdownItem>
               <DropdownItem
-                key="99_uptime"
-                description="Applications stay on the grid with high availability and high uptime guarantees."
+                key="multichannel_sync"
+                description="Sync inventory with Shopify, Amazon, and POS systems without overselling."
                 startContent={<TimerIcon />}
               >
-                +99% Uptime
+                Multichannel Sync
               </DropdownItem>
               <DropdownItem
-                key="supreme_support"
-                description="Overcome any challenge with a supporting team ready to respond."
+                key="analytics"
+                description="Identify slow movers, dead stock, and reorder priorities with actionable analytics."
                 startContent={<FaceIcon />}
               >
-                +Supreme Support
+                Inventory Analytics
               </DropdownItem>
             </DropdownMenu>
           </Dropdown>
@@ -128,24 +140,12 @@ export default function NavBar() {
           <Button
             as={Link}
             color="primary"
-            href="#"
+            href="#pricing"
             variant="solid"
             className="hidden sm:flex"
             size="sm"
           >
-            Connect on{" "}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="12"
-              height="12"
-              fill="none"
-              viewBox="0 0 1200 1227"
-            >
-              <path
-                fill="currentColor"
-                d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"
-              />
-            </svg>
+            Book a demo
           </Button>
         </NavbarItem>
         <NavbarItem>

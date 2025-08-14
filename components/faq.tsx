@@ -5,37 +5,39 @@ import { motion } from "framer-motion";
 export default function Faq() {
   const accordionItems = [
     {
-      title: "This template is Free?",
+      title: "What makes it a 'smart' inventory system?",
       content: (
         <div className="text-muted-foreground">
-          Yes, this template is free. You can use it for personal or commercial
-          purposes.
+          Real-time stock visibility, AI demand forecasting, automated purchase
+          orders with supplier lead times, and multichannel syncing to prevent
+          overselling.
         </div>
       ),
     },
     {
-      title: "There are more templates?",
+      title: "Which channels and tools can I connect?",
       content: (
         <div className="text-muted-foreground">
-          Yes, there are more templates available.
+          Shopify, Amazon, POS systems, and ERP/EDI via integrations. Use our
+          APIs for custom workflows.
         </div>
       ),
     },
     {
-      title: "How can I use this template?",
+      title: "How accurate is the forecasting?",
       content: (
         <div className="text-muted-foreground">
-          You can use this template by cloning it from GitHub.
+          Models adapt to your seasonality and lead times. Teams typically see
+          20–30% fewer stockouts and 10–25% lower on-hand inventory after 60–90
+          days.
         </div>
       ),
     },
     {
-      title: "How can I contribute to this template?",
+      title: "Do you support multiple warehouses and locations?",
       content: (
         <div className="text-muted-foreground">
-          You can contribute to this template by forking it on GitHub and
-          submitting a pull request. You can also report any issues or bugs you
-          encounter while using the template.
+          Yes. Track transfers, bin locations, and reorder points per location.
         </div>
       ),
     },
@@ -43,6 +45,7 @@ export default function Faq() {
 
   return (
     <motion.section
+      id="faq"
       initial={{ y: 20, opacity: 0 }}
       whileInView={{
         y: 0,

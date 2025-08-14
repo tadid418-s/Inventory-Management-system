@@ -16,69 +16,71 @@ export default function Hero() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   return (
     <div className="relative justify-center items-center">
-      <section className="max-w-screen-xl mx-auto px-4 py-28 gap-12 md:px-8 flex flex-col justify-center items-center">
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{
-            y: 0,
-            opacity: 1,
-          }}
-          transition={{ duration: 0.6, type: "spring", bounce: 0 }}
-          className="flex flex-col justify-center items-center space-y-5 max-w-4xl mx-auto text-center"
-        >
-          <span className="w-fit h-full text-sm bg-card px-2 py-1 border border-border rounded-full">
-            New template!
-          </span>
-          <h1 className="text-4xl font-medium tracking-tighter mx-auto md:text-6xl text-pretty bg-gradient-to-b from-sky-800 dark:from-sky-100 to-foreground dark:to-foreground bg-clip-text text-transparent">
-            Beautiful Landing Page Template for SaaS Startups
-          </h1>
-          <p className="max-w-2xl text-lg mx-auto text-muted-foreground text-balance">
-            Create your next landing page using this free template.
-          </p>
+      <section id="product" className="max-w-screen-xl mx-auto px-4 py-0 md:py-0 gap-12 md:px-8 flex flex-col justify-center overflow-visible min-h-[calc(100dvh-64px)]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{
+              y: 0,
+              opacity: 1,
+            }}
+            transition={{ duration: 0.6, type: "spring", bounce: 0 }}
+            className="flex flex-col justify-start md:items-start items-center space-y-5 max-w-4xl mx-auto md:mx-0 md:text-left text-center"
           >
-            <Button onPress={onOpen} color="primary" variant="shadow">
-              See more
-            </Button>
-            <Modal
-              isOpen={isOpen}
-              placement="center"
-              onOpenChange={onOpenChange}
+            <span className="w-fit h-full text-sm bg-card px-2 py-1 border border-border rounded-full">
+              Smart inventory, simplified
+            </span>
+            <h1 className="text-4xl font-medium tracking-tighter mx-auto md:mx-0 md:text-6xl text-pretty bg-gradient-to-b from-sky-800 dark:from-sky-100 to-foreground dark:to-foreground bg-clip-text text-transparent">
+              Smart Inventory Management for Modern Teams
+            </h1>
+            <p className="max-w-2xl text-lg mx-auto md:mx-0 text-muted-foreground text-balance">
+              Track stock in real time, forecast demand with AI, and automate reordering across warehouses and channels.
+            </p>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="items-center justify-start gap-x-3 space-y-3 sm:flex sm:space-y-0"
             >
-              <ModalContent>
-                <ModalHeader>About</ModalHeader>
-                <ModalBody>
-                  I&apos;m a software engineer building things for the web.
-                </ModalBody>
-                <ModalFooter>
-                  <Button
-                    as={Link}
-                    href="#"
-                    color="primary"
-                    variant="solid"
-                    size="sm"
-                  >
-                    Connect on{" "}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="12"
-                      height="12"
-                      fill="none"
-                      viewBox="0 0 1200 1227"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"
-                      />
-                    </svg>
-                  </Button>
-                </ModalFooter>
-              </ModalContent>
-            </Modal>
+              <Button onPress={onOpen} color="primary" variant="shadow">
+                See how it works
+              </Button>
+              <Modal
+                isOpen={isOpen}
+                placement="center"
+                onOpenChange={onOpenChange}
+              >
+                <ModalContent>
+                  <ModalHeader>About InventoryOS</ModalHeader>
+                  <ModalBody>
+                    InventoryOS helps retailers and wholesalers eliminate stockouts and overstock with real-time visibility, AI forecasting, and automated workflows.
+                  </ModalBody>
+                  <ModalFooter>
+                    <Button as={Link} href="#pricing" color="primary" variant="solid" size="sm">
+                      Book a demo
+                    </Button>
+                  </ModalFooter>
+                </ModalContent>
+              </Modal>
+            </motion.div>
           </motion.div>
-        </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, type: "spring", bounce: 0 }}
+            className="relative w-full md:-mr-10 lg:-mr-20 xl:-mr-28 2xl:-mr-36 overflow-visible mt-0 md:mt-16 lg:mt-24 xl:mt-28 2xl:mt-32"
+          >
+            <div className="relative rounded-2xl border border-border bg-card/50 shadow-lg overflow-hidden md:scale-110 lg:scale-115 xl:scale-125 2xl:scale-130 origin-center">
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-transparent pointer-events-none" />
+              <img
+                src="/Images/dashboard.webp"
+                alt="InventoryOS dashboard preview"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+              />
+            </div>
+          </motion.div>
+        </div>
       </section>
       <motion.div
         initial={{ opacity: 0 }}

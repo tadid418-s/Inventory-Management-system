@@ -5,26 +5,26 @@ export default function Testimonials() {
   const testimonials = [
     {
       name: "Sarah Chen",
-      role: "CEO at TechStart",
+      role: "COO at UrbanThreads Retail",
       avatar: "https://i.pravatar.cc/150?img=1",
       content:
-        "This platform has transformed how we manage our business. The analytics features alone have saved us countless hours and improved our decision-making process significantly.",
+        "InventoryOS cut our stockouts by 35% in 3 months and slashed excess inventory across 4 stores. The AI reorder points just work.",
       rating: 5,
     },
     {
       name: "Marcus Rodriguez",
-      role: "Product Manager at Scale Co",
+      role: "Head of Operations at Scale Co",
       avatar: "https://i.pravatar.cc/150?img=3",
       content:
-        "The integration capabilities are outstanding. We were able to connect all our existing tools seamlessly. The customer support team is also incredibly responsive and helpful.",
+        "Connected Shopify, Amazon, and our POS in a day. No more overselling. Replenishment is twice as fast now.",
       rating: 5,
     },
     {
       name: "Emma Thompson",
-      role: "CTO at DataFlow",
+      role: "VP Supply Chain at DataFlow",
       avatar: "https://i.pravatar.cc/150?img=5",
       content:
-        "Security was our main concern when choosing a platform, and this solution exceeded our expectations. The encryption and compliance features give us complete peace of mind.",
+        "Forecast accuracy improved week over week. We finally trust our numbers and plan purchases with confidence.",
       rating: 5,
     },
     {
@@ -32,7 +32,7 @@ export default function Testimonials() {
       role: "CTO at FinanceFlow",
       avatar: "https://i.pravatar.cc/150?img=15",
       content:
-        "Security and compliance are critical in our industry. This platform not only meets but exceeds all our regulatory requirements.",
+        "Role-based permissions and audit logs made compliance straightforward. Uptime has been rock solid.",
       rating: 5,
     },
     {
@@ -40,7 +40,7 @@ export default function Testimonials() {
       role: "Director of Operations at StreamlineOps",
       avatar: "https://i.pravatar.cc/150?img=17",
       content:
-        "The customer support is phenomenal. Every question gets answered quickly and thoroughly. It's like having an extended team member.",
+        "Support helped us model supplier lead times and minimums. Purchase orders are now on autopilot.",
       rating: 5,
     },
     {
@@ -48,7 +48,7 @@ export default function Testimonials() {
       role: "Founder at NextGen Solutions",
       avatar: "https://i.pravatar.cc/150?img=19",
       content:
-        "We've tried many platforms, but this one stands out for its reliability and performance. Zero downtime in 18 months of usage.",
+        "Tried 5 inventory tools. This is the first that scaled with us without duct-tape spreadsheets.",
       rating: 5,
     },
     {
@@ -56,7 +56,7 @@ export default function Testimonials() {
       role: "Product Lead at InnovateLab",
       avatar: "https://i.pravatar.cc/150?img=21",
       content:
-        "The analytics dashboard gives us insights we never had before. Data-driven decisions have become our competitive advantage.",
+        "The slow-mover report and dead-stock alerts paid for the subscription in the first month.",
       rating: 5,
     },
     {
@@ -64,7 +64,7 @@ export default function Testimonials() {
       role: "Engineering Manager at TechBridge",
       avatar: "https://i.pravatar.cc/150?img=23",
       content:
-        "Migration was seamless and the onboarding process was exceptional. Our team was productive from day one.",
+        "Onboarding took a week including data cleanup. The team held our hand through every step.",
       rating: 5,
     },
     {
@@ -72,7 +72,7 @@ export default function Testimonials() {
       role: "CEO at GrowthMetrics",
       avatar: "https://i.pravatar.cc/150?img=25",
       content:
-        "The platform scales beautifully with our business. From startup to enterprise, it has grown with us every step of the way.",
+        "We expanded to 8 locations without breaking our workflows. Transfers and bin tracking are super clear.",
       rating: 5,
     },
     {
@@ -80,7 +80,7 @@ export default function Testimonials() {
       role: "Head of Product at DataDriven",
       avatar: "https://i.pravatar.cc/150?img=27",
       content:
-        "Real-time collaboration features have transformed how our remote team works together. Productivity has increased dramatically.",
+        "Dashboards are exactly what leadership wanted: turns, aging, and replenishment priorities in one place.",
       rating: 5,
     },
   ];
@@ -106,10 +106,10 @@ export default function Testimonials() {
           className="text-center mb-20 flex flex-col gap-3"
         >
           <h2 className="text-xl font-semibold sm:text-2xl bg-gradient-to-b from-foreground to-muted-foreground text-transparent bg-clip-text">
-            Loved by Teams Worldwide
+            Trusted by Retail, Wholesale, and DTC Teams
           </h2>
           <p className="mx-auto max-w-xl text-muted-foreground text-center">
-            Join thousands of companies that trust our platform.
+            Join teams reducing stockouts and unlocking cash with InventoryOS.
           </p>
         </motion.div>
 

@@ -7,35 +7,41 @@ import { motion } from "framer-motion";
 export default function Pricing() {
   const plans = [
     {
-      name: "Hobby Plan",
-      desc: "Enjoy limited access to all our features",
+      name: "Starter",
+      desc: "For small shops getting real-time inventory visibility",
       price: 0,
       isMostPop: false,
-      features: ["Make the best schedule", "Support your team"],
-    },
-    {
-      name: "Basic Plan",
-      desc: "Make the best schedule for your team",
-      price: 10,
-      isMostPop: true,
       features: [
-        "Make the best schedule",
-        "Support your team",
-        "Build your website",
-        "Video calls",
+        "1 warehouse/location",
+        "500 SKUs",
+        "Real-time stock tracking",
+        "Basic analytics",
       ],
     },
     {
-      name: "Enterprise Plan",
-      desc: "Make the best schedule for your team and more",
-      price: 20,
+      name: "Growth",
+      desc: "AI forecasting and smart reordering for growing teams",
+      price: 49,
+      isMostPop: true,
+      features: [
+        "3 warehouses/locations",
+        "10,000 SKUs",
+        "AI demand forecasting",
+        "Smart reordering & POs",
+        "Multichannel sync (Shopify, Amazon)",
+      ],
+    },
+    {
+      name: "Enterprise",
+      desc: "Advanced automation and priority support at scale",
+      price: 199,
       isMostPop: false,
       features: [
-        "Make the best schedule",
-        "Support your team",
-        "Build your website",
-        "Video calls",
-        "Audio calls",
+        "Unlimited locations",
+        "Unlimited SKUs",
+        "Custom workflows & approvals",
+        "ERP/EDI integrations",
+        "Dedicated success manager",
       ],
     },
   ];
@@ -54,10 +60,10 @@ export default function Pricing() {
     >
       <div className="flex flex-col gap-3">
         <h3 className="text-xl font-semibold sm:text-2xl bg-gradient-to-b from-foreground to-muted-foreground text-transparent bg-clip-text">
-          Pricing Plans for your business
+          Pricing for every stage of your inventory journey
         </h3>
         <p className="max-w-xl text-muted-foreground text-center">
-          Select the plan that best suits your needs.
+          Start free. Upgrade when you need forecasting, automation, and scale.
         </p>
       </div>
       <div className="mt-16 gap-10 grid lg:grid-cols-3 place-content-center">

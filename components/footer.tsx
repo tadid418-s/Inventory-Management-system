@@ -19,7 +19,8 @@ const Footer = () => {
         <div className="relative overflow-hidden rounded-3xl border border-border bg-card">
           <div className="absolute inset-0 bg-gradient-to-b from-background to-light/20 dark:from-card dark:to-light/10" />
 
-          <div className="relative z-[1] p-8 md:p-12">
+          {/* Constrain inner content to align with navbar brand gutter */}
+          <div className="relative z-[1] py-12 md:py-16 max-w-screen-xl mx-auto pr-4 sm:pr-6 lg:pr-8 pl-0 sm:pl-2 lg:pl-4">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-10 items-start">
               <div className="md:col-span-2 flex flex-col gap-4">
                 <div className="flex items-center gap-3">
@@ -96,7 +97,9 @@ const Footer = () => {
               <div className="flex items-center gap-2 text-xs text-muted-foreground">
                 <span>© {year} InventoryOS. All rights reserved.</span>
                 <span className="text-border">|</span>
-                <span>Made by: <Link href="/" className="text-foreground hover:text-light transition-colors font-medium">Innov8</Link></span>
+                <span>
+                  Made by: <Link href="/" className="text-xs underline font-semibold underline-offset-2 decoration-1 text-muted-foreground hover:text-foreground">INNOV8</Link>
+                </span>
               </div>
               <div className="flex items-center gap-6">
                 <Link href="#" className={linkClass}>

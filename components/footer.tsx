@@ -14,8 +14,8 @@ const Footer = () => {
     "text-sm text-muted-foreground hover:text-foreground transition-colors";
 
   return (
-    <footer className="px-4 py-16 md:py-24">
-      <div className="max-w-6xl mx-auto">
+    <footer className="w-full px-0 py-16 md:py-24">
+      <div className="w-full">
         <div className="relative overflow-hidden rounded-3xl border border-border bg-card">
           <div className="absolute inset-0 bg-gradient-to-b from-background to-light/20 dark:from-card dark:to-light/10" />
 
@@ -93,9 +93,11 @@ const Footer = () => {
             <Divider className="my-8" />
 
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-              <span className="text-xs text-muted-foreground">
-                © {year} InventoryOS. All rights reserved.
-              </span>
+              <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                <span>© {year} InventoryOS. All rights reserved.</span>
+                <span className="text-border">|</span>
+                <span>Made by: <Link href="/" className="text-foreground hover:text-light transition-colors font-medium">Innov8</Link></span>
+              </div>
               <div className="flex items-center gap-6">
                 <Link href="#" className={linkClass}>
                   Privacy Policy

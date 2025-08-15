@@ -35,62 +35,80 @@ export default function NavBar() {
   ];
 
   return (
-    <Navbar isBlurred maxWidth="xl">
+    <Navbar 
+      isBlurred 
+      maxWidth="xl" 
+      className="px-4 sm:px-6 lg:px-8"
+      classNames={{
+        wrapper: "px-0",
+        base: "bg-background/95 backdrop-blur-md",
+      }}
+    >
+      {/* Mobile Menu Toggle */}
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle />
       </NavbarContent>
-      <NavbarContent className="sm:hidden pr-3" justify="center">
+
+      {/* Mobile Brand */}
+      <NavbarContent className="sm:hidden" justify="center">
         <NavbarBrand>
-          <a
+          <Link
             href="/"
-            className="font-light tracking-tighter text-inherit text-lg"
+            className="font-light tracking-tighter text-inherit text-lg hover:opacity-80 transition-opacity"
           >
             InventoryOS
-          </a>
+          </Link>
         </NavbarBrand>
       </NavbarContent>
-      <NavbarContent className="hidden sm:flex gap-8" justify="center">
-        <NavbarBrand>
-          <a
+
+      {/* Desktop Navigation */}
+      <NavbarContent className="hidden sm:flex gap-6" justify="center">
+        <NavbarBrand className="mr-8">
+          <Link
             href="/"
-            className="font-light tracking-tighter text-2xl flex gap-3 justify-center items-center"
+            className="font-light tracking-tighter text-2xl hover:opacity-80 transition-opacity"
           >
             InventoryOS
-          </a>
+          </Link>
         </NavbarBrand>
-        <NavbarItem>
-          <Button as={Link} href="#product" variant="light" size="sm">
-            Product
-          </Button>
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} href="#pricing" variant="light" size="sm">
-            Pricing
-          </Button>
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} href="#testimonials" variant="light" size="sm">
-            Testimonials
-          </Button>
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} href="#faq" variant="light" size="sm">
-            FAQ
-          </Button>
-        </NavbarItem>
+        
+        <div className="flex items-center gap-2">
+          <NavbarItem>
+            <Button as={Link} href="#product" variant="light" size="sm" className="px-3">
+              Product
+            </Button>
+          </NavbarItem>
+          <NavbarItem>
+            <Button as={Link} href="#pricing" variant="light" size="sm" className="px-3">
+              Pricing
+            </Button>
+          </NavbarItem>
+          <NavbarItem>
+            <Button as={Link} href="#testimonials" variant="light" size="sm" className="px-3">
+              Testimonials
+            </Button>
+          </NavbarItem>
+          <NavbarItem>
+            <Button as={Link} href="#faq" variant="light" size="sm" className="px-3">
+              FAQ
+            </Button>
+          </NavbarItem>
+        </div>
+
         <NavbarItem>
           <Dropdown>
             <DropdownTrigger>
               <Button
-                endContent={<ChevronDownIcon />}
+                endContent={<ChevronDownIcon className="text-default-500" />}
                 variant="light"
                 size="sm"
+                className="px-3"
               >
-                Dropdown
+                Features
               </Button>
             </DropdownTrigger>
-               <DropdownMenu
-               aria-label="InventoryOS features"
+            <DropdownMenu
+              aria-label="InventoryOS features"
               className="w-[340px]"
               itemClasses={{
                 base: "gap-4",
@@ -135,15 +153,17 @@ export default function NavBar() {
           </Dropdown>
         </NavbarItem>
       </NavbarContent>
-      <NavbarContent justify="end">
+
+      {/* Right Side Actions */}
+      <NavbarContent justify="end" className="gap-3">
         <NavbarItem className="hidden sm:flex">
           <Button
             as={Link}
             color="primary"
             href="#pricing"
             variant="solid"
-            className="hidden sm:flex"
             size="sm"
+            className="px-4"
           >
             Book a demo
           </Button>
@@ -152,11 +172,13 @@ export default function NavBar() {
           <ThemeSwitcher />
         </NavbarItem>
       </NavbarContent>
-      <NavbarMenu>
+
+      {/* Mobile Menu */}
+      <NavbarMenu className="pt-6">
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
+          <NavbarMenuItem key={`${item.name}-${index}`}>
             <Link
-              className="w-full"
+              className="w-full text-lg"
               href={item.href}
               size="lg"
               color="foreground"
@@ -165,6 +187,18 @@ export default function NavBar() {
             </Link>
           </NavbarMenuItem>
         ))}
+        <NavbarMenuItem className="pt-4">
+          <Button
+            as={Link}
+            color="primary"
+            href="#pricing"
+            variant="solid"
+            className="w-full"
+            size="lg"
+          >
+            Book a demo
+          </Button>
+        </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
   );

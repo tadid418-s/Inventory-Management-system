@@ -76,15 +76,15 @@ export default function HowItWorks() {
         "Easily add products manually or by scanning barcodes. Categorize them by type, location, or supplier for seamless tracking.",
       icon: <CubeIcon className="w-5 h-5" />,
       smallPreview: <MiniFields />,
-             largePreview: (
-         <div className="w-full h-full rounded-xl border border-border bg-background/70 dark:bg-card/70 p-4 flex flex-col gap-3">
-           <img 
-             src="/Images/step1.webp" 
-             alt="Add & Organize interface preview" 
-             className="w-full h-full object-cover rounded-lg"
-           />
-         </div>
-       ),
+      largePreview: (
+        <div className="w-full h-full rounded-xl border border-border bg-background/70 dark:bg-card/70 p-4 flex flex-col gap-3">
+          <img 
+            src="/Images/step1.webp" 
+            alt="Add & Organize interface preview" 
+            className="w-full h-full object-cover rounded-lg"
+          />
+        </div>
+      ),
     },
     {
       title: "Track in Real Time",
@@ -93,15 +93,15 @@ export default function HowItWorks() {
         "Monitor stock levels live across all locations. Get instant alerts for low stock, expiry dates, or unusual activity.",
       icon: <BellIcon className="w-5 h-5" />,
       smallPreview: <MiniList />,
-             largePreview: (
-         <div className="w-full h-full rounded-xl border border-border bg-background/70 dark:bg-card/70 p-4 flex flex-col gap-3">
-           <img 
-             src="/Images/step1.webp" 
-             alt="Track in Real Time interface preview" 
-             className="w-full h-full object-cover rounded-lg"
-           />
-         </div>
-       ),
+      largePreview: (
+        <div className="w-full h-full rounded-xl border border-border bg-background/70 dark:bg-card/70 p-4 flex flex-col gap-3">
+          <img 
+            src="/Images/step1.webp" 
+            alt="Track in Real Time interface preview" 
+            className="w-full h-full object-cover rounded-lg"
+          />
+        </div>
+      ),
     },
     {
       title: "Forecast & Optimize",
@@ -123,7 +123,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section className="max-w-screen-xl w-full mx-auto px-4 py-24 gap-5 md:px-8 flex flex-col justify-center items-center">
+    <section id="how-it-works" className="max-w-screen-xl w-full mx-auto px-4 py-24 gap-5 md:px-8 flex flex-col justify-center items-center">
       <div className="flex flex-col gap-3 text-center">
         <h2 className="text-xl font-semibold sm:text-2xl bg-gradient-to-b from-foreground to-muted-foreground text-transparent bg-clip-text">
           How InventoryOS Works
@@ -140,23 +140,23 @@ export default function HowItWorks() {
         {steps.map((step, index) => {
           const isActive = activeIndex === index;
           return (
-                         <motion.div
-               key={step.title}
-               layout
-               transition={{ 
-                 type: "spring", 
-                 duration: 0.8, 
-                 bounce: 0,
-                 stiffness: 60,
-                 damping: 25
-               }}
-               className={`relative cursor-default rounded-2xl border border-border bg-card p-4 md:p-6 flex flex-col gap-4 overflow-hidden`}
-                               style={{ flex: isActive ? 1.6 : 1, minHeight: isActive ? '400px' : 'auto' }}
-               onMouseEnter={() => setActiveIndex(index)}
-               onFocus={() => setActiveIndex(index)}
-               tabIndex={0}
-               aria-label={`${step.subtitle}: ${step.title}`}
-             >
+            <motion.div
+              key={step.title}
+              layout
+              transition={{ 
+                type: "spring", 
+                duration: 0.8, 
+                bounce: 0,
+                stiffness: 60,
+                damping: 25
+              }}
+              className={`relative cursor-default rounded-2xl border border-border bg-card p-4 md:p-6 flex flex-col gap-4 overflow-hidden`}
+              style={{ flex: isActive ? 1.6 : 1, minHeight: isActive ? '400px' : 'auto' }}
+              onMouseEnter={() => setActiveIndex(index)}
+              onFocus={() => setActiveIndex(index)}
+              tabIndex={0}
+              aria-label={`${step.subtitle}: ${step.title}`}
+            >
               <div className="flex items-center justify-between gap-3">
                 <div className="inline-flex items-center gap-2">
                   <div className="w-7 h-7 rounded-md border border-border bg-background/70 dark:bg-card/70 flex items-center justify-center">
@@ -167,46 +167,46 @@ export default function HowItWorks() {
                 <span className="text-xs text-muted-foreground">{step.subtitle}</span>
               </div>
 
-                             <motion.div 
-                 layout
-                 transition={{ 
-                   type: "spring", 
-                   duration: 0.6, 
-                   bounce: 0,
-                   stiffness: 80,
-                   damping: 30
-                 }}
-                 className="flex-1 flex flex-col"
-               >
-                 <motion.div
-                   key={isActive ? 'expanded' : 'collapsed'}
-                   initial={{ opacity: 0, scale: 0.95 }}
-                   animate={{ opacity: 1, scale: 1 }}
-                   transition={{ 
-                     duration: 0.4,
-                     ease: "easeOut"
-                   }}
-                   className="flex flex-col gap-3 h-full"
-                 >
-                   {!isActive ? (
-                     <>
-                       <p className="text-sm text-muted-foreground leading-relaxed">
-                         {step.description.split('.')[0]}.
-                       </p>
-                       <div className="flex-1 flex items-end">
-                         {step.smallPreview}
-                       </div>
-                     </>
-                                       ) : (
-                      <>
-                        <p className="text-sm text-muted-foreground">{step.description}</p>
-                        <div className="flex-1 flex items-stretch">
-                          {step.largePreview}
-                        </div>
-                      </>
-                    )}
-                 </motion.div>
-               </motion.div>
+              <motion.div 
+                layout
+                transition={{ 
+                  type: "spring", 
+                  duration: 0.6, 
+                  bounce: 0,
+                  stiffness: 80,
+                  damping: 30
+                }}
+                className="flex-1 flex flex-col"
+              >
+                <motion.div
+                  key={isActive ? 'expanded' : 'collapsed'}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ 
+                    duration: 0.4,
+                    ease: "easeOut"
+                  }}
+                  className="flex flex-col gap-3 h-full"
+                >
+                  {!isActive ? (
+                    <>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {step.description.split('.')[0]}.
+                      </p>
+                      <div className="flex-1 flex items-end">
+                        {step.smallPreview}
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <p className="text-sm text-muted-foreground">{step.description}</p>
+                      <div className="flex-1 flex items-stretch">
+                        {step.largePreview}
+                      </div>
+                    </>
+                  )}
+                </motion.div>
+              </motion.div>
             </motion.div>
           );
         })}

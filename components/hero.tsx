@@ -2,18 +2,9 @@
 /* eslint-disable @next/next/no-img-element */
 import { Button } from "@heroui/button";
 import { motion } from "framer-motion";
-import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-} from "@heroui/modal";
-import { useDisclosure } from "@heroui/use-disclosure";
 import { Link } from "@heroui/link";
 
 export default function Hero() {
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
   return (
     <div className="relative justify-center items-center">
       {/* Top Left Flare */}
@@ -64,26 +55,9 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               className="items-center justify-start gap-x-3 space-y-3 sm:flex sm:space-y-0"
             >
-              <Button onPress={onOpen} color="primary" variant="shadow">
+              <Button as={Link} href="#how-it-works" color="primary" variant="solid">
                 See how it works
               </Button>
-              <Modal
-                isOpen={isOpen}
-                placement="center"
-                onOpenChange={onOpenChange}
-              >
-                <ModalContent>
-                  <ModalHeader>About InventoryOS</ModalHeader>
-                  <ModalBody>
-                    InventoryOS helps retailers and wholesalers eliminate stockouts and overstock with real-time visibility, AI forecasting, and automated workflows.
-                  </ModalBody>
-                  <ModalFooter>
-                    <Button as={Link} href="#pricing" color="primary" variant="solid" size="sm">
-                      Book a demo
-                    </Button>
-                  </ModalFooter>
-                </ModalContent>
-              </Modal>
             </motion.div>
           </motion.div>
 

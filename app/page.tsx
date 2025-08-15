@@ -9,6 +9,17 @@ import Pricing from "@/components/pricing";
 import Faq from "@/components/faq";
 import Footer from "@/components/footer";
 import Cta from "@/components/cta";
+import dynamic from "next/dynamic";
+
+// Dynamically import AnimatedTextHalf with no SSR to prevent hydration issues
+const AnimatedTextHalf = dynamic(() => import("@/components/AnimatedTextHalf"), {
+  ssr: false,
+  loading: () => (
+    <div className="h-[200px] bg-gradient-to-br from-gray-900 to-gray-800 flex items-center justify-center">
+      <div className="text-white text-2xl font-bold">INNOV8</div>
+    </div>
+  ),
+});
 
 export default function Home() {
   return (
@@ -24,6 +35,7 @@ export default function Home() {
       <Faq />
       <Cta />
       <Footer />
+      <AnimatedTextHalf />
     </main>
   );
 }

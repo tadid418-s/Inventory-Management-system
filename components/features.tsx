@@ -53,7 +53,7 @@ export default function Features() {
           area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
           icon={<BarChartIcon className="h-4 w-4 text-black dark:text-neutral-400" />}
           title="AI-Powered Stock Forecasting"
-          description="Predict future demand and prevent shortages or overstocking with intelligent algorithms."
+          description="Prevent stockouts before they happen and access your inventory data at all times."
         />
 
         <GridItem

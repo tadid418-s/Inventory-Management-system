@@ -1,50 +1,71 @@
 "use client";
+import { useState } from "react";
 import { Card, CardBody, CardFooter } from "@heroui/card";
 import { Button } from "@heroui/button";
 import { Divider } from "@heroui/divider";
 import { motion } from "framer-motion";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Pricing() {
+  type BillingCycle = "monthly" | "yearly";
+  const [billing, setBilling] = useState<BillingCycle>("monthly");
+
   const plans = [
     {
-      name: "Starter",
-      desc: "For small shops getting real-time inventory visibility",
-      price: 0,
+      name: "Basic",
+      desc: "Essentials for small shops to stay on top of stock",
+      monthlyPriceETB: 600,
       isMostPop: false,
+      cta: "Choose Basic",
       features: [
-        "1 warehouse/location",
-        "500 SKUs",
+        "1 location",
+        "Up to 1,000 SKUs",
         "Real-time stock tracking",
-        "Basic analytics",
+        "CSV import & basic analytics",
       ],
     },
     {
-      name: "Growth",
-      desc: "AI forecasting and smart reordering for growing teams",
-      price: 49,
+      name: "Premium",
+      desc: "Best for teams that need automation, forecasting, and integrations",
+      monthlyPriceETB: 1200,
       isMostPop: true,
+      cta: "Upgrade to premium",
       features: [
-        "3 warehouses/locations",
-        "10,000 SKUs",
+        "3 locations",
+        "Up to 10,000 SKUs",
         "AI demand forecasting",
-        "Smart reordering & POs",
-        "Multichannel sync (Shopify, Amazon)",
+        "Smart reordering & purchase orders",
+        "Shopify & marketplace sync",
+        "Email & in‑app support",
       ],
     },
     {
       name: "Enterprise",
-      desc: "Advanced automation and priority support at scale",
-      price: 199,
+      desc: "For client-facing teams with advanced reporting and controls",
+      monthlyPriceETB: 3900,
       isMostPop: false,
+      cta: "Upgrade to enterprise",
       features: [
-        "Unlimited locations",
-        "Unlimited SKUs",
-        "Custom workflows & approvals",
-        "ERP/EDI integrations",
-        "Dedicated success manager",
+        "Unlimited locations & SKUs",
+        "Team access & permissions",
+        "Custom domains & EDI/ERP integrations",
+        "Advanced dashboards & exports",
+        "Dedicated onboarding & priority support",
       ],
     },
   ];
+
+  const formatETB = (amount: number) =>
+    amount.toLocaleString("en-ET", {
+      style: "currency",
+      currency: "ETB",
+      maximumFractionDigits: 0,
+    });
+
+  const priceForCycle = (monthlyPriceETB: number, cycle: BillingCycle) => {
+    if (cycle === "monthly") return monthlyPriceETB;
+    return Math.round(monthlyPriceETB * 0.85);
+  };
 
   return (
     <motion.section
@@ -58,13 +79,28 @@ export default function Pricing() {
       transition={{ duration: 0.5, delay: 0.5, type: "spring", bounce: 0 }}
       className="max-w-screen-xl w-full mx-auto px-4 py-28 gap-5 md:px-8 flex flex-col justify-center items-center"
     >
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 items-center text-center">
+        <span className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-border bg-background/70">Pricing</span>
         <h3 className="text-xl font-semibold sm:text-2xl bg-gradient-to-b from-foreground to-muted-foreground text-transparent bg-clip-text">
           Pricing for every stage of your inventory journey
         </h3>
         <p className="max-w-xl text-muted-foreground text-center">
           Start free. Upgrade when you need forecasting, automation, and scale.
         </p>
+      </div>
+      <div className="mt-6">
+        <Tabs
+          defaultValue={billing}
+          onValueChange={(v) => setBilling((v as BillingCycle) ?? "monthly")}
+          className="items-center"
+        >
+          <TabsList>
+            <TabsTrigger value="monthly">Monthly</TabsTrigger>
+            <TabsTrigger value="yearly">Yearly</TabsTrigger>
+          </TabsList>
+          <TabsContent value="monthly" />
+          <TabsContent value="yearly" />
+        </Tabs>
       </div>
       <div className="mt-16 gap-10 grid lg:grid-cols-3 place-content-center">
         {plans.map((item, idx) => (
@@ -88,12 +124,22 @@ export default function Pricing() {
                     {item.desc}
                   </span>
                 </div>
-                <span className="text-2xl font-light">
-                  {item.price.toLocaleString("en-US", {
-                    style: "currency",
-                    currency: "USD",
-                  })}
-                </span>
+                <div className="flex flex-col items-start gap-1">
+                  {billing === "yearly" ? (
+                    <>
+                      <span className="text-2xl font-light">
+                        {formatETB(priceForCycle(item.monthlyPriceETB, "yearly"))}
+                        <span className="text-sm"> / month</span>
+                      </span>
+                      <span className="text-xs text-muted-foreground">billed yearly</span>
+                    </>
+                  ) : (
+                    <span className="text-2xl font-light">
+                      {formatETB(priceForCycle(item.monthlyPriceETB, "monthly"))}
+                      <span className="text-sm"> / month</span>
+                    </span>
+                  )}
+                </div>
 
                 <Divider />
 
@@ -116,7 +162,7 @@ export default function Pricing() {
                   variant="solid"
                   color={item.isMostPop ? "primary" : "default"}
                 >
-                  Get Started
+                  {item.cta}
                 </Button>
               </CardFooter>
             </div>

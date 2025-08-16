@@ -124,7 +124,8 @@ export default function HowItWorks() {
 
   return (
     <section id="how-it-works" className="max-w-screen-xl w-full mx-auto px-4 py-24 gap-5 md:px-8 flex flex-col justify-center items-center">
-      <div className="flex flex-col gap-3 text-center">
+      <div className="flex flex-col gap-3 text-center items-center">
+        <span className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-border bg-background/70">How it works</span>
         <h2 className="text-xl font-semibold sm:text-2xl bg-gradient-to-b from-foreground to-muted-foreground text-transparent bg-clip-text">
           How InventoryOS Works
         </h2>

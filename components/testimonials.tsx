@@ -104,8 +104,9 @@ export default function Testimonials() {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-center mb-20 flex flex-col gap-3"
+          className="text-center mb-20 flex flex-col gap-3 items-center"
         >
+          <span className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-border bg-background/70">Testimonials</span>
           <h2 className="text-xl font-semibold sm:text-2xl bg-gradient-to-b from-foreground to-muted-foreground text-transparent bg-clip-text">
             Trusted by Retail, Wholesale, and DTC Teams
           </h2>

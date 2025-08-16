@@ -39,7 +39,8 @@ export default function Features() {
         </div>
       </motion.div>
 
-      <div className="flex flex-col gap-3 text-center mb-16 relative z-10">
+      <div className="flex flex-col gap-3 text-center mb-16 relative z-10 items-center">
+        <span className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-border bg-background/70">Features</span>
         <h2 className="text-xl font-semibold sm:text-2xl bg-gradient-to-b from-foreground to-muted-foreground text-transparent bg-clip-text">
           Powerful Features for Modern Inventory Management
         </h2>

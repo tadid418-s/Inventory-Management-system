@@ -28,7 +28,7 @@ export function Tabs({ defaultValue, value, onValueChange, className, children }
     onValueChange?.(val);
   };
 
-  const ctx = useMemo<TabsContextValue>(() => ({ value: currentValue, setValue }), [currentValue]);
+  const ctx = useMemo<TabsContextValue>(() => ({ value: currentValue, setValue }), [currentValue, setValue]);
 
   return (
     <TabsContext.Provider value={ctx}>

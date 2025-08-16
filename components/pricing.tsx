@@ -98,8 +98,8 @@ export default function Pricing() {
             <TabsTrigger value="monthly">Monthly</TabsTrigger>
             <TabsTrigger value="yearly">Yearly</TabsTrigger>
           </TabsList>
-          <TabsContent value="monthly" />
-          <TabsContent value="yearly" />
+          <TabsContent value="monthly"></TabsContent>
+          <TabsContent value="yearly"></TabsContent>
         </Tabs>
       </div>
       <div className="mt-16 gap-10 grid lg:grid-cols-3 place-content-center">

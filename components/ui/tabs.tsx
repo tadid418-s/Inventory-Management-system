@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useMemo, useState } from "react";
+import React, { createContext, useCallback, useContext, useMemo, useState } from "react";
 
 type TabsContextValue = {
   value: string;
@@ -23,10 +23,13 @@ export function Tabs({ defaultValue, value, onValueChange, className, children }
   const isControlled = typeof value === "string";
   const currentValue = isControlled ? (value as string) : internalValue;
 
-  const setValue = (val: string) => {
-    if (!isControlled) setInternalValue(val);
-    onValueChange?.(val);
-  };
+  const setValue = useCallback(
+    (val: string) => {
+      if (!isControlled) setInternalValue(val);
+      onValueChange?.(val);
+    },
+    [isControlled, onValueChange]
+  );
 
   const ctx = useMemo<TabsContextValue>(() => ({ value: currentValue, setValue }), [currentValue, setValue]);
 
@@ -88,7 +91,7 @@ export function TabsTrigger({ value, className, children }: TabsTriggerProps) {
 interface TabsContentProps {
   value: string;
   className?: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export function TabsContent({ value, className, children }: TabsContentProps) {

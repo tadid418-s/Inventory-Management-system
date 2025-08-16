@@ -1,44 +1,96 @@
-# SaaS landing page template
+# InventoryOS — Smart Inventory Management Landing
 
-A Landing page template for SaaS applications.
+Marketing site for InventoryOS, a modern inventory management platform. Built with Next.js 14, Tailwind CSS, and HeroUI. Includes product sections, ETB pricing with monthly/yearly toggle, and animated UI components.
 
 ![Preview](/app/opengraph-image.png)
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Key Features](#key-features)
+- [Structure](#structure)
 - [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Contributing](#contributing)
+- [Development Scripts](#development-scripts)
+- [Customization](#customization)
+- [Credits](#credits)
 - [License](#license)
 
-## Introduction
+## Tech Stack
 
-This project is a starter template for SaaS applications landing page using Next.js 14, HeroUI, and Tailwind CSS.
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- HeroUI (Cards, Buttons, Accordion, Tooltip)
+- Framer Motion (subtle animations)
 
-## Features
+## Key Features
 
-- Next.js 14 with server-side rendering (SSR)
-- HeroUI for beautiful and responsive UI components
-- Tailwind CSS for easy styling and customization
+- Hero with product preview and CTA
+- Features grid with improved borders for light/dark modes
+- How it works section with interactive steps
+- Pricing in Ethiopian Birr (ETB) with Monthly/Yearly toggle
+  - Yearly applies a 15% reduction to the per‑month price and displays a “billed yearly” note
+  - Plan tiers: Basic, Premium (popular), Enterprise
+- Testimonials carousel
+- Partners grid
+- FAQ with accordion
+- Consistent section pills (FAQ-style) across sections where appropriate
+- Accessible, responsive layout with keyboard focus states
+
+## Structure
+
+- `app/`
+  - `layout.tsx`: global styles, fonts, metadata (including favicon)
+  - `page.tsx`: assembles the homepage
+  - `providers.tsx`: UI providers
+- `components/`
+  - `hero.tsx`, `features.tsx`, `how-it-works.tsx`, `pricing.tsx`, `testimonials.tsx`, `partners.tsx`, `faq.tsx`, `stats.tsx`
+  - `ui/`: shared UI (glowing-effect, infinite-moving-cards, tabs, etc.)
 
 ## Getting Started
 
-To get started with this template, follow these steps:
+1. Clone: `git clone https://github.com/tadid418-s/Inventory-Management-system.git`
+2. Install deps: `npm install`
+3. Start dev server: `npm run dev`
+4. Visit `http://localhost:3000`
 
-1. Clone the repository: `git clone https://github.com/tadid418-s/Inventory-Management-system.git`
-2. Install the dependencies: `npm install`
-3. Start the development server: `npm run dev`
+## Development Scripts
 
-## Usage
+- `npm run dev` — start Next.js dev server
+- `npm run build` — production build
+- `npm run start` — start production server
 
-Once the development server is running, you can access the application at `http://localhost:3000`. From there, you can start building your SaaS application by customizing the provided components, adding new pages, and implementing your business logic.
+## Pricing Configuration
 
-## Contributing
+Pricing lives in `components/pricing.tsx`.
 
-Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
+- Plans are defined in the `plans` array with `monthlyPriceETB` and features
+- Billing cycle state controls monthly/yearly rendering; yearly uses `Math.round(monthly * 0.85)`
+- Update ETB values, plan names, and features to match your offering
+
+## Theming & Styles
+
+- Tailwind config in `tailwind.config.ts`
+- Global styles in `app/globals.css`
+- Light/dark borders tuned in `components/features.tsx`
+
+## Favicon
+
+- Place your icon at `app/favicon.ico`
+- Metadata in `app/layout.tsx` declares the icon for robustness
+
+## Customization Tips
+
+- Section pills: use `text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-border bg-background/70`
+- Animations: Framer Motion variants are configured for smooth, subtle motion
+- Images: replace assets in `public/Images/`
+
+## Credits
+
+- HeroUI components
+- Radix Icons
+- Community patterns and inspiration
 
 ## License
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+MIT — see [`license.txt`](./license.txt)

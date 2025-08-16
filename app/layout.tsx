@@ -17,6 +17,11 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "InventoryOS — Smart Inventory Management",
   description: "Smart inventory for modern teams.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

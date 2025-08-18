@@ -97,7 +97,7 @@ const Footer = () => {
                 <span>© {year} InventoryOS. All rights reserved.</span>
                 <span className="text-border">|</span>
                 <span>
-                  Made by: <Link href="/" className="text-xs underline font-semibold underline-offset-2 decoration-1 text-muted-foreground hover:text-foreground">INNOV8</Link>
+                  Made by: <Link href="https://youtu.be/dQw4w9WgXcQ?si=LWRz4BiBsrmpz0sX" target="_blank" rel="noopener noreferrer" className="text-xs underline font-semibold underline-offset-2 decoration-1 text-muted-foreground hover:text-foreground">INNOV8</Link>
                 </span>
               </div>
               <div className="flex items-center gap-6">

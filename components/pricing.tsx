@@ -119,7 +119,7 @@ export default function Pricing() {
             <div className="z-[2] flex flex-col justify-between w-full h-full bg-card rounded-[18px] p-5">
               <CardBody className="w-full flex items-start gap-3">
                 <div className="flex flex-col">
-                  <h4 className="text-xl font-light">{item.name}</h4>
+                  <h4 className="text-xl font-medium">{item.name}</h4>
                   <span className="text-muted-foreground text-sm font-light">
                     {item.desc}
                   </span>
@@ -127,16 +127,27 @@ export default function Pricing() {
                 <div className="flex flex-col items-start gap-1">
                   {billing === "yearly" ? (
                     <>
-                      <span className="text-2xl font-light">
-                        {formatETB(priceForCycle(item.monthlyPriceETB, "yearly"))}
-                        <span className="text-sm"> / month</span>
-                      </span>
-                      <span className="text-xs text-muted-foreground">billed yearly</span>
+                      <div className="flex items-center gap-3">
+                        <span className="text-lg font-medium">
+                          {formatETB(priceForCycle(item.monthlyPriceETB, "yearly"))}
+                          <span className="text-sm font-light"> / month</span>
+                        </span>
+                        <div className="p-2 bg-primary/10 rounded-lg border border-primary/20">
+                          <span className="text-lg font-medium text-primary">
+                            {formatETB(priceForCycle(item.monthlyPriceETB, "yearly") * 12)}
+                            <span className="text-sm font-light"> / year</span>
+                          </span>
+                        </div>
+                      </div>
+                      <span className="text-xs text-muted-foreground font-light">billed yearly</span>
+                      <div className="text-xs text-muted-foreground font-light">
+                        Save {formatETB(item.monthlyPriceETB * 12 - priceForCycle(item.monthlyPriceETB, "yearly") * 12)} annually
+                      </div>
                     </>
                   ) : (
-                    <span className="text-2xl font-light">
+                    <span className="text-lg font-medium">
                       {formatETB(priceForCycle(item.monthlyPriceETB, "monthly"))}
-                      <span className="text-sm"> / month</span>
+                      <span className="text-sm font-light"> / month</span>
                     </span>
                   )}
                 </div>
@@ -144,7 +155,7 @@ export default function Pricing() {
                 <Divider />
 
                 <div className="flex flex-col gap-5 pb-5">
-                  <span className="text-muted-foreground text-sm font-light">
+                  <span className="text-muted-foreground text-sm font-medium">
                     Includes
                   </span>
                   <ul className="flex flex-col gap-2">

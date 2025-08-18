@@ -82,7 +82,7 @@ export default function Pricing() {
       <div className="flex flex-col gap-3 items-center text-center">
         <span className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-border bg-background/70">Pricing</span>
         <h3 className="text-xl font-semibold sm:text-2xl bg-gradient-to-b from-foreground to-muted-foreground text-transparent bg-clip-text">
-          Pricing for every stage of your inventory journey
+          Pricing for every stage of your inventory & sales journey
         </h3>
         <p className="max-w-xl text-muted-foreground text-center">
           Start free. Upgrade when you need forecasting, automation, and scale.

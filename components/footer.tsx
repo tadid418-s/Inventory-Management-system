@@ -26,7 +26,7 @@ const Footer = () => {
                   <span className="font-light tracking-tighter text-2xl">InventoryOS</span>
                 </div>
                 <p className="text-sm text-muted-foreground max-w-md">
-                  InventoryOS empowers teams to track stock in real time, forecast demand with AI, and automate reordering across channels.
+                  InventoryOS empowers teams to track stock and sales in real time, forecast demand with AI, and automate reordering across channels.
                 </p>
 
                 <div className="flex items-center gap-3">

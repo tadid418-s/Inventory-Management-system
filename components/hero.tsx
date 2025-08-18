@@ -40,16 +40,17 @@ export default function Hero() {
               opacity: 1,
             }}
             transition={{ duration: 0.6, type: "spring", bounce: 0 }}
-            className="flex flex-col justify-start md:items-start items-center space-y-5 max-w-4xl mx-auto md:mx-0 md:text-left text-center"
+            className="flex flex-col justify-start md:items-start items-center space-y-5 max-w-4xl mx-auto md:mx-0 md:text-left text-center relative z-10 md:-translate-x-6 lg:-translate-x-8 xl:-translate-x-10"
           >
             <span className="w-fit h-full text-sm bg-card px-2 py-1 border border-border rounded-full">
-              Smart inventory, simplified
+              Smart inventory & sales, simplified
             </span>
             <h1 className="text-4xl font-medium tracking-tighter mx-auto md:mx-0 md:text-6xl text-pretty bg-gradient-to-b from-sky-800 dark:from-sky-100 to-foreground dark:to-foreground bg-clip-text text-transparent">
-              Smart Inventory Management for Modern Teams
+              Smart Inventory &
+              <span className="block">Sales Management</span>
             </h1>
             <p className="max-w-2xl text-lg mx-auto md:mx-0 text-muted-foreground text-balance">
-              Track stock in real time, forecast demand with AI, and automate reordering across warehouses and channels.
+              Track stock and sales in real time, forecast demand with AI, and automate reordering across warehouses, stores, and channels.
             </p>
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -66,7 +67,7 @@ export default function Hero() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, type: "spring", bounce: 0 }}
-            className="relative w-full md:-mr-10 lg:-mr-20 xl:-mr-28 2xl:-mr-36 overflow-visible mt-0 md:mt-16 lg:mt-24 xl:mt-28 2xl:mt-32"
+            className="relative z-0 w-full md:-mr-10 lg:-mr-20 xl:-mr-28 2xl:-mr-36 overflow-visible mt-0 md:mt-16 lg:mt-24 xl:mt-28 2xl:mt-32 md:translate-x-6 lg:translate-x-8 xl:translate-x-10"
           >
             <div className="relative rounded-2xl border border-border bg-card/50 shadow-lg overflow-hidden md:scale-110 lg:scale-115 xl:scale-125 2xl:scale-130 origin-center">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-transparent pointer-events-none" />

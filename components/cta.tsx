@@ -29,10 +29,10 @@ export default function Cta() {
           <div className="relative z-[1] max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
             <div className="max-w-3xl text-center mx-auto">
               <h3 className="text-3xl md:text-5xl font-semibold tracking-tight text-white">
-                Ready to optimize your inventory operations?
+                Ready to optimize your inventory and sales?
               </h3>
               <p className="mt-4 text-sm md:text-base text-white/90">
-                InventoryOS gives you real‑time stock visibility, AI demand forecasting, and automated reordering across every channel—so you never oversell or run out.
+                InventoryOS gives you real‑time stock and sales visibility, AI demand forecasting, and automated reordering across every channel—so you never oversell or run out.
               </p>
 
               <div className="mt-6 flex items-center justify-center gap-3">

@@ -42,10 +42,10 @@ export default function Features() {
       <div className="flex flex-col gap-3 text-center mb-16 relative z-10 items-center">
         <span className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-border bg-background/70">Features</span>
         <h2 className="text-xl font-semibold sm:text-2xl bg-gradient-to-b from-foreground to-muted-foreground text-transparent bg-clip-text">
-          Powerful Features for Modern Inventory Management
+          Powerful Features for Smart Inventory & Sales Management
         </h2>
         <p className="mx-auto max-w-2xl text-muted-foreground text-center">
-          Everything you need to take control of your inventory with intelligent automation and real-time insights.
+          Everything you need to manage inventory and sales with intelligent automation and real-time insights.
         </p>
       </div>
 
@@ -60,8 +60,8 @@ export default function Features() {
         <GridItem
           area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]"
           icon={<ClockIcon className="h-4 w-4 text-black dark:text-neutral-400" />}
-          title="Real-Time Inventory Tracking"
-          description="View stock levels across all locations instantly with live updates and real-time synchronization."
+          title="Real-Time Inventory & Sales Tracking"
+          description="View stock levels and sales across all locations instantly with live updates and real-time synchronization."
         />
 
         <GridItem

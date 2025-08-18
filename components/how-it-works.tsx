@@ -127,10 +127,10 @@ export default function HowItWorks() {
       <div className="flex flex-col gap-3 text-center items-center">
         <span className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-border bg-background/70">How it works</span>
         <h2 className="text-xl font-semibold sm:text-2xl bg-gradient-to-b from-foreground to-muted-foreground text-transparent bg-clip-text">
-          How InventoryOS Works
+          How Our Smart Inventory & Sales System Works
         </h2>
         <p className="mx-auto max-w-2xl text-muted-foreground text-center">
-          From onboarding to optimization, InventoryOS streamlines every step so you can add products, track stock in real time, and optimize with AI in minutes.
+          From onboarding to optimization, we streamline every step so you can add products, track stock and sales in real time, and optimize with AI in minutes.
         </p>
       </div>
 

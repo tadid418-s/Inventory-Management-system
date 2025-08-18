@@ -126,29 +126,54 @@ export default function Pricing() {
                 </div>
                 <div className="flex flex-col items-start gap-1">
                   {billing === "yearly" ? (
-                    <>
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="w-full"
+                    >
                       <div className="flex items-center gap-3">
                         <span className="text-lg font-medium">
                           {formatETB(priceForCycle(item.monthlyPriceETB, "yearly"))}
                           <span className="text-sm font-light"> / month</span>
                         </span>
-                        <div className="p-2 bg-primary/10 rounded-lg border border-primary/20">
+                        <motion.div 
+                          initial={{ scale: 0.8, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          transition={{ duration: 0.4, delay: 0.1 }}
+                          className="p-2 bg-primary/10 rounded-lg border border-primary/20"
+                        >
                           <span className="text-lg font-medium text-primary">
                             {formatETB(priceForCycle(item.monthlyPriceETB, "yearly") * 12)}
                             <span className="text-sm font-light"> / year</span>
                           </span>
+                        </motion.div>
+                      </div>
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.3, delay: 0.2 }}
+                      >
+                        <span className="text-xs text-muted-foreground font-light">billed yearly</span>
+                        <div className="text-xs text-muted-foreground font-light">
+                          Save {formatETB(item.monthlyPriceETB * 12 - priceForCycle(item.monthlyPriceETB, "yearly") * 12)} annually
                         </div>
-                      </div>
-                      <span className="text-xs text-muted-foreground font-light">billed yearly</span>
-                      <div className="text-xs text-muted-foreground font-light">
-                        Save {formatETB(item.monthlyPriceETB * 12 - priceForCycle(item.monthlyPriceETB, "yearly") * 12)} annually
-                      </div>
-                    </>
+                      </motion.div>
+                    </motion.div>
                   ) : (
-                    <span className="text-lg font-medium">
-                      {formatETB(priceForCycle(item.monthlyPriceETB, "monthly"))}
-                      <span className="text-sm font-light"> / month</span>
-                    </span>
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="w-full"
+                    >
+                      <span className="text-lg font-medium">
+                        {formatETB(priceForCycle(item.monthlyPriceETB, "monthly"))}
+                        <span className="text-sm font-light"> / month</span>
+                      </span>
+                    </motion.div>
                   )}
                 </div>
 
